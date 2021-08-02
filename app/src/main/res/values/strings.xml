@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Kanis</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_account">Account</string>
+    <string name="image">Image</string>
+
+    <!--PG-->
+    <string name="RAZORPAY_KEY">rzp_live_U4tdfeoXhWGUMi8</string>
+    <string name="Flutterwave_KEY">flutterwav_stag_ewryhfejf733edw</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="facebook_app_id">201826287345269</string>
+    <string name="fb_login_protocol_scheme">fb201826285405269</string>
+
+    <string name="server_client_id">364205543335-cr273fmgdc9n2uqfkrdf6075uid84eht.apps.googleusercontent.com</string>
+    <string-array name="labels_for_price_filter">
+        <item>R₣ 0 </item>
+        <item>R₣ 20000 </item>
+        <item>R₣ 40000 </item>
+        <item>R₣ 60000 </item>
+        <item>R₣ 80000 </item>
+        <item>R₣ 100000 </item>
+        <item>R₣ 120000 </item>
+        <item>R₣ 140000 </item>
+        <item>R₣ 160000 </item>
+        <item>R₣ 180000 </item>
+        <item>R₣ 200000+ </item>
+    </string-array>
+</resources>
