@@ -1,6 +1,7 @@
 package rw.kanis.shop.Presentation.ui.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -36,6 +38,7 @@ import carbon.recycler.ListAdapter;
 import rw.kanis.shop.Models.BannerData;
 import rw.kanis.shop.Models.BannerDataLinks;
 import rw.kanis.shop.Models.BannerProducts;
+import rw.kanis.shop.Presentation.ui.activities.impl.ProductListingActivity;
 import rw.kanis.shop.R;
 import rw.kanis.shop.Utils.AppConfig;
 
@@ -51,8 +54,10 @@ public class BannerCategoryAdapter extends RecyclerView.Adapter<BannerCategoryAd
         private TextView title;
         private ImageSlider sliderLayout;
         private RecyclerView recyclerView;
+        private CardView viewMoreBtn;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            viewMoreBtn = itemView.findViewById(R.id.viewMoreBtn);
             title = itemView.findViewById(R.id.titleText);
             sliderLayout = itemView.findViewById(R.id.image_slider);
             recyclerView = itemView.findViewById(R.id.recyclerForProducts);
@@ -132,7 +137,16 @@ public class BannerCategoryAdapter extends RecyclerView.Adapter<BannerCategoryAd
         BannerProductsAdapter adapter = new BannerProductsAdapter(ctx , list);
         holder.recyclerView.setAdapter(adapter);
         holder.recyclerView.setLayoutManager(new LinearLayoutManager(ctx , LinearLayoutManager.HORIZONTAL,false));
-
+        holder.viewMoreBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ctx.startActivity(new Intent(ctx ,
+                        ProductListingActivity.class).putExtra("title" ,
+                        data.getName()).putExtra("url" ,
+                        data.getCategoryLinks().getProducts()
+                ));
+            }
+        });
 
 
     }

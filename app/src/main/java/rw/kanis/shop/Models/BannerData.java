@@ -16,6 +16,18 @@ public class BannerData implements Serializable {
     private List<BannerDataLinks> slider_imgs = null;
     @SerializedName("products")
     private List<BannerProducts> products = null;
+    @SerializedName("links")
+    private CategoryLinks categoryLinks = null;
+
+    public CategoryLinks getCategoryLinks() {
+        return categoryLinks;
+    }
+
+    public void setCategoryLinks(CategoryLinks categoryLinks) {
+        this.categoryLinks = categoryLinks;
+    }
+
+
 
     public String getName() {
         return name;
