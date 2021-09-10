@@ -112,11 +112,12 @@ public class ProductSearchFragment extends Fragment implements ProductSearchView
                 //Log.d("Test", "QueryTextChange: "+ newText);
                 if (newText.length() == 0){
                     key = "";
+                    mProducts.clear();
                     searchProduct(key, scope);
                 }
                 else {
                     key = newText;
-                    mProducts.removeAll(mProducts);
+                    mProducts.clear();
                     searchProduct(key, scope);
                 }
                 return true;
@@ -168,7 +169,7 @@ public class ProductSearchFragment extends Fragment implements ProductSearchView
 
         //Log.d("Test", url);
 
-        mProducts.removeAll(mProducts);
+        mProducts.clear();
 
         GridLayoutManager horizontalLayoutManager
                 = new GridLayoutManager(getContext(), 1);
@@ -212,7 +213,7 @@ public class ProductSearchFragment extends Fragment implements ProductSearchView
     @Override
     public void setSearchedProduct(ProductSearchResponse productSearchResponse) {
         Log.d("Test", String.valueOf(productSearchResponse.getMeta().getTotal()));
-        mProducts.remove(mProducts);
+        mProducts.clear();
         List<SearchProduct> temp = productSearchResponse.getData();
         //for(int i = 0 ; i < temp.size();i++)
         //Toast.makeText(getContext(), temp.get(1).getName(), Toast.LENGTH_SHORT).show();
