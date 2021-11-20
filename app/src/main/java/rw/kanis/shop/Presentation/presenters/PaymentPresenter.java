@@ -30,10 +30,7 @@ public class PaymentPresenter extends AbstractPresenter implements CouponInterac
         this.paymentView = paymentView;
     }
 
-    public PaymentPresenter(Executor executor, MainThread mainThread, StripePaymentView stripePaymentView) {
-        super(executor, mainThread);
-        this.stripePaymentView = stripePaymentView;
-    }
+
 
     public void applyCoupon(int user_id, String code, String token) {
         new CouponInteractorImpl(mExecutor, mMainThread, this, user_id, code, token).execute();
@@ -43,9 +40,7 @@ public class PaymentPresenter extends AbstractPresenter implements CouponInterac
         new PaypalInteractorImpl(mExecutor, mMainThread, this, token, jsonObject).execute();
     }
 
-    public void submitStripeRequest(String token, JsonObject jsonObject) {
-        new StripeInteractorImpl(mExecutor, mMainThread, this, token, jsonObject).execute();
-    }
+
 
     public void submitWalletOrder(String token, JsonObject jsonObject) {
         new WalletInteractorImpl(mExecutor, mMainThread, this, token, jsonObject).execute();

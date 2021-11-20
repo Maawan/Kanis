@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Kanis_Final/Kanis/app/src/main/res/layout/banner_category_layout.xml" value="0.18170580964153277" />
+        <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Kanis20Nov/app/src/main/res/layout/activity_airtel_payment.xml" value="0.1" />
+        <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Kanis20Nov/app/src/main/res/layout/activity_momo_payment.xml" value="0.1" />
+        <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Kanis20Nov/app/src/main/res/layout/activity_stripe_payment.xml" value="0.1" />
       </map>
     </option>
   </component>

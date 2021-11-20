@@ -150,14 +150,7 @@ public class PaymentActivity extends BaseActivity implements PaymentSelectListen
                     if (payment_method.equals("paypal")){
                         //setupBraintreeAndStartExpressCheckout();
                     }
-                    else if (payment_method.equals("card")){
-                        Intent intent = new Intent(PaymentActivity.this, StripePaymentActivity.class);
-                        intent.putExtra("total", total);
-                        intent.putExtra("shipping", shipping_cost);
-                        intent.putExtra("tax", tax);
-                        intent.putExtra("coupon_discount", coupon_discount);
-                        startActivityForResult(intent, 500);
-                    }
+//
                     else if(payment_method.equals("razorpay")){
                         startRazorPayment();
                     }
@@ -250,20 +243,6 @@ public class PaymentActivity extends BaseActivity implements PaymentSelectListen
         List<PaymentModel> paymentModels = new ArrayList<>();
 
 
-        /*
-                if (AppConfig.STRIPE_KEY.length() > 0){
-            paymentModels.add(new PaymentModel(R.drawable.cardpayment, "card", "Checkout with Card"));
-        }
-        if (AppConfig.BRAINTREE_KEY.length() > 0){
-            paymentModels.add(new PaymentModel(R.drawable.paypal_logo_png_7, "paypal", "Checkout with PayPal"));
-        }
-
-        if (AppConfig.RAZORPAY_KEY.length() > 0){
-            paymentModels.add(new PaymentModel(R.drawable.razorpay, "razorpay", "Checkout with Razorpay"));
-        }*/
-//        paymentModels.add(new PaymentModel(R.drawable.cod, "cod", "Cash on Delivery"));
-//        paymentModels.add(new PaymentModel(R.drawable.airtelmoney, "Airtel Money", "Airtel Money"));
-//        paymentModels.add(new PaymentModel(R.drawable.flutterwave,"flutterwave","Debit/Credit Card or Account"));
 
 
 

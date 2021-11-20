@@ -13,8 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.stripe.android.PaymentConfiguration;
-import com.stripe.android.Stripe;
+
 
 import rw.kanis.shop.Network.response.AuthResponse;
 import rw.kanis.shop.R;
@@ -22,7 +21,7 @@ import rw.kanis.shop.Utils.AppConfig;
 import rw.kanis.shop.Utils.UserPrefs;
 
 public class MomoPaymentActivity extends BaseActivity {
-    private Stripe stripe;
+
     private static ProgressDialog progressDialog;
     private String paymentIntentClientSecret;
     private double total, shipping, tax, coupon_discount;
@@ -61,7 +60,7 @@ public class MomoPaymentActivity extends BaseActivity {
 
         authResponse = new UserPrefs(this).getAuthPreferenceObjectJson("auth_response");
 
-        PaymentConfiguration.init(getApplicationContext(), AppConfig.STRIPE_KEY);
+
 
         startCheckout();
     }
@@ -82,7 +81,7 @@ public class MomoPaymentActivity extends BaseActivity {
     }
 
     private void startCheckout() {
-        // Hook up the pay button to the card widget and stripe instance
+
         Button payButton = findViewById(R.id.payButton);
         payButton.setOnClickListener((View view) -> {
             String transID = transactionID.getText().toString();

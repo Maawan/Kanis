@@ -18,7 +18,7 @@ public class AppConfig {
 //    public static String BASE_URL = "http://192.168.0.1/pshop/api/v1/";
 //    public static String ASSET_URL = "http://192.168.0.1/pshop/public/";
 
-    public static String STRIPE_KEY = "pk_test_c6VvBEbwHFdulFZ62q1IQrar";
+
     public static String BRAINTREE_KEY = "sandbox_pghddbzc_h44cx45wt7g27wmc";
     public static final String SHIPPING_RATE_API = "https://www.kanis.rw/api/v1/get_shipping_value";
     public  static boolean CASH_ON_DELIVERY = true;

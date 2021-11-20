@@ -17,24 +17,17 @@ import androidx.annotation.NonNull;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
-import com.stripe.android.ApiResultCallback;
-import com.stripe.android.PaymentConfiguration;
-import com.stripe.android.PaymentIntentResult;
-import com.stripe.android.Stripe;
-import com.stripe.android.model.ConfirmPaymentIntentParams;
-import com.stripe.android.model.PaymentIntent;
-import com.stripe.android.model.PaymentMethodCreateParams;
-import com.stripe.android.view.CardInputWidget;
+
 
 import java.lang.ref.WeakReference;
 
 import rw.kanis.shop.Network.response.AuthResponse;
 import rw.kanis.shop.Network.response.CouponResponse;
 import rw.kanis.shop.Network.response.OrderResponse;
-import rw.kanis.shop.Network.response.StripeClientSecretResponse;
+
 import rw.kanis.shop.Presentation.presenters.PaymentPresenter;
 import rw.kanis.shop.Presentation.ui.activities.PaymentView;
-import rw.kanis.shop.Presentation.ui.activities.StripePaymentView;
+
 import rw.kanis.shop.R;
 import rw.kanis.shop.Threading.MainThreadImpl;
 import rw.kanis.shop.Utils.AppConfig;
@@ -43,7 +36,7 @@ import rw.kanis.shop.Utils.UserPrefs;
 import rw.kanis.shop.domain.executor.impl.ThreadExecutor;
 
 public class AirtelPaymentActivity extends BaseActivity {
-    private Stripe stripe;
+
     private static ProgressDialog progressDialog;
     private String paymentIntentClientSecret;
     private double total, shipping, tax, coupon_discount;
@@ -82,7 +75,7 @@ public class AirtelPaymentActivity extends BaseActivity {
 
         authResponse = new UserPrefs(this).getAuthPreferenceObjectJson("auth_response");
 
-        PaymentConfiguration.init(getApplicationContext(), AppConfig.STRIPE_KEY);
+
 
         startCheckout();
     }
@@ -103,7 +96,7 @@ public class AirtelPaymentActivity extends BaseActivity {
     }
 
     private void startCheckout() {
-        // Hook up the pay button to the card widget and stripe instance
+
         Button payButton = findViewById(R.id.payButton);
         payButton.setOnClickListener((View view) -> {
             String transID = transactionID.getText().toString();
