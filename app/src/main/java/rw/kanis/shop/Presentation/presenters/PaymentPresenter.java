@@ -2,28 +2,24 @@ package rw.kanis.shop.Presentation.presenters;
 
 import rw.kanis.shop.Network.response.CouponResponse;
 import rw.kanis.shop.Network.response.OrderResponse;
-import rw.kanis.shop.Network.response.StripeClientSecretResponse;
 import rw.kanis.shop.Presentation.ui.activities.PaymentView;
-import rw.kanis.shop.Presentation.ui.activities.StripePaymentView;
 import rw.kanis.shop.domain.executor.Executor;
 import rw.kanis.shop.domain.executor.MainThread;
 import rw.kanis.shop.domain.interactors.CODInteractor;
 import rw.kanis.shop.domain.interactors.CouponInteractor;
 import rw.kanis.shop.domain.interactors.OrderInteractor;
 import rw.kanis.shop.domain.interactors.PaypalInteractor;
-import rw.kanis.shop.domain.interactors.StripeInteractor;
 import rw.kanis.shop.domain.interactors.WalletInteractor;
 import rw.kanis.shop.domain.interactors.impl.CODInteractorImpl;
 import rw.kanis.shop.domain.interactors.impl.CouponInteractorImpl;
 import rw.kanis.shop.domain.interactors.impl.OrderInteractorImpl;
 import rw.kanis.shop.domain.interactors.impl.PaypalInteractorImpl;
-import rw.kanis.shop.domain.interactors.impl.StripeInteractorImpl;
 import rw.kanis.shop.domain.interactors.impl.WalletInteractorImpl;
 import com.google.gson.JsonObject;
 
-public class PaymentPresenter extends AbstractPresenter implements CouponInteractor.CallBack, PaypalInteractor.CallBack, StripeInteractor.CallBack, CODInteractor.CallBack, OrderInteractor.CallBack, WalletInteractor.CallBack {
+public class PaymentPresenter extends AbstractPresenter implements CouponInteractor.CallBack, PaypalInteractor.CallBack,  CODInteractor.CallBack, OrderInteractor.CallBack, WalletInteractor.CallBack {
     private PaymentView paymentView;
-    private StripePaymentView stripePaymentView;
+
 
     public PaymentPresenter(Executor executor, MainThread mainThread, PaymentView paymentView) {
         super(executor, mainThread);
@@ -78,17 +74,7 @@ public class PaymentPresenter extends AbstractPresenter implements CouponInterac
 
     }
 
-    @Override
-    public void ononClientSecretReceived(StripeClientSecretResponse stripeClientSecretResponse) {
-        if (stripePaymentView != null){
-            stripePaymentView.onClientSecretReceived(stripeClientSecretResponse);
-        }
-    }
 
-    @Override
-    public void ononClientSecretReceiveError() {
-
-    }
 
     @Override
     public void onCODOrderSubmitted(OrderResponse orderResponse) {
